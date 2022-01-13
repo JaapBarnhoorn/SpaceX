@@ -1,0 +1,40 @@
+<form class="search-form">
+    <label><h2>Search launch by year</h2></label>
+      <div class="Icon-inside">
+        <input type="text" placeholder="search" [(ngModel)]="filteredStatus" name="something"/>
+        <img src="../../../assets/search.svg" alt="">
+      </div>
+</form>
+
+<div *ngFor="let rocket of rockets | yearfilter:filteredStatus" class="rocket-information">
+    <!-- How to ensure that this information gets in dynamically -->
+    <div class="rocket-information-inner">
+    <div class="rocket-information-first">
+        <img src="../../../assets/rocket.svg" alt="">
+        <div>
+            <h2>Rocket name</h2>
+            <h3>{{ rocket.rocket.rocket_name }}</h3>
+        </div>
+    </div>
+    <div class="rocket-information-first">
+        <img src="../../../assets/satellite.svg" alt="">
+        <div>
+            <h2>Rocket load</h2>
+            <h3>{{rocket.rocket.second_stage.payloads[0].payload_type}}</h3>
+        </div>
+    </div>
+   <div class="rocket-information-second">
+    <div class="rocket-information-second-first" >
+        <img src="../../../assets/calendar.svg" alt="">
+        <div>
+            <h2>Launch year</h2>
+            <h3>{{ rocket.launch_year }}</h3>
+        </div>
+    </div>
+    <div class="rocket-information-second-second">
+        <!-- this needs to be a link to a popup -->
+        <img [routerLink]="['/', rocket.flight_number]" src="../../../assets/plus.svg" alt="">
+    </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,24 @@
+.rocket {
+    width: 90%;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+
+
+@media only screen and (min-width: 700px) {
+
+.rocket-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+}
+
+@media only screen and (min-width: 1100px) {
+    .rocket-grid {
+        grid-template-columns: auto auto auto;
+    }
+}

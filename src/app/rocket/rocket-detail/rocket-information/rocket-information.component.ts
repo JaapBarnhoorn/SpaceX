@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import { Rocket } from '../rocket-detail.component'
+import { ActivatedRoute, ParamMap } from '@angular/router'
+// import { Rocket } from '../rocket-detail.component'
 import { HttpClient } from '@angular/common/http'
 
 @Component({
@@ -9,21 +9,25 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./rocket-information.component.css']
 })
 export class RocketInformationComponent implements OnInit {
-  // rocket: { id: any, title: any }; 
-  @Input() rockets: Rocket []
-  
+  rocket: any;
 
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getRocket()
+    this.activatedRoute.paramMap.subscribe((route: ParamMap) => {
+      const id = route.get('id') as string;
+      this.getRocket(id)
+      console.log(route)
+    })
+    // this.getRocket(id)
   }
 
-  getRocket() {
-    this.httpClient.get<any>(`https://api.spacexdata.com/v3/launches`).subscribe(
+  getRocket(id: string) {
+    this.httpClient.get<any>(`https://api.spacexdata.com/v3/launches/${id}`).subscribe(
       response => {
         console.log(response);
-        this.rockets = response
+        this.rocket = response
       }
     )
   }

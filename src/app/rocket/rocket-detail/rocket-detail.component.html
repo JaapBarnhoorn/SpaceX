@@ -5,7 +5,7 @@
         <img src="../../../assets/search.svg" alt="">
       </div>
 </form>
-
+<ng-container *ngIf="rockets; else loading">
 <div *ngFor="let rocket of rockets | yearfilter:filteredStatus" class="rocket-information">
     <!-- How to ensure that this information gets in dynamically -->
     <div class="rocket-information-inner">
@@ -19,8 +19,8 @@
     <div class="rocket-information-first">
         <img src="../../../assets/satellite.svg" alt="">
         <div>
-            <h2>Rocket load</h2>
-            <h3>{{rocket.rocket.second_stage.payloads[0].payload_type}}</h3>
+            <h2>Payload type</h2>
+            <h3> <span *ngFor="let payload of rocket?.rocket?.second_stage.payloads; let last = last">{{ payload.payload_type }}{{last?'':', '}} </span></h3>
         </div>
     </div>
    <div class="rocket-information-second">
@@ -38,3 +38,5 @@
     </div>
 </div>
 </div>
+</ng-container>
+<ng-template #loading> <div> is loading</div></ng-template>

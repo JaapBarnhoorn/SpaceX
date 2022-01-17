@@ -5,7 +5,7 @@ import { RocketComponent } from './rocket/rocket.component'
 
 const routes: Routes = [
   { path: '', component: RocketComponent},
-  { path: ':title', component: RocketInformationComponent}
+  { path: ':id', component: RocketInformationComponent}
 
 ];
 

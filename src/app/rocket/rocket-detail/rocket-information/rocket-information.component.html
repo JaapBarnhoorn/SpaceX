@@ -1,6 +1,7 @@
 <!-- {{ rocket.rocket.second_stage | json }} -->
+<ng-container *ngIf="rocket; else loading">
 <div class="rocket-information-detail">
-    <img class="back" src="../../../assets/back.svg" alt="">
+    <img (click)="backClicked()" class="back" src="../../../assets/back.svg" alt="">
     <div class="rocket-information-left">
         <img src="../../../assets/spacerocket.svg" alt="">
     </div>
@@ -78,3 +79,5 @@
 
     </div>
 </div>
+</ng-container>
+<ng-template #loading> <div> is loading</div></ng-template>

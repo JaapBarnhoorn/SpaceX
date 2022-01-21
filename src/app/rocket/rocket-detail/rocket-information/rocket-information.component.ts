@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router'
-// import { Rocket } from '../rocket-detail.component'
 import { HttpClient } from '@angular/common/http'
+import { RocketService } from '../../../rocket.service'
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-rocket-information',
@@ -12,24 +13,27 @@ export class RocketInformationComponent implements OnInit {
   rocket: any;
 
 
-  constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute) { }
+  constructor(private httpClient: HttpClient, private activatedRoute:
+    ActivatedRoute, private rocketService: RocketService, private _location: Location) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((route: ParamMap) => {
       const id = route.get('id') as string;
-      this.getRocket(id)
+      this.onGetRocket(id)
       console.log(route)
     })
     // this.getRocket(id)
   }
 
-  getRocket(id: string) {
-    this.httpClient.get<any>(`https://api.spacexdata.com/v3/launches/${id}`).subscribe(
-      response => {
-        console.log(response);
-        this.rocket = response
-      }
+  onGetRocket(id: string) {
+    this.rocketService.getRocket(id).subscribe(
+     response => {
+        this.rocket = response;}
     )
   }
 
+  backClicked() {
+    this._location.back()
+  }
 }
+

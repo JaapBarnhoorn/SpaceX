@@ -11,7 +11,7 @@ import { RocketInformationComponent } from './rocket/rocket-detail/rocket-inform
 import { HttpClientModule } from '@angular/common/http';
 import { YearfilterPipe } from './rocket/rocket-detail/yearfilter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {  SearchRocketComponent  } from './rocket/rocket-detail/search-rocket/search-rocket.component'
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RocketDetailComponent,
     RocketInformationComponent,
     YearfilterPipe,
+    SearchRocketComponent
 
 
   ],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Rocket } from '../rocket.module'
 import { RocketService } from '../../rocket.service'
@@ -10,8 +10,8 @@ import { RocketService } from '../../rocket.service'
   styleUrls: ['./rocket-detail.component.css']
 })
 export class RocketDetailComponent implements OnInit {
-filteredStatus = ''
-rockets: Rocket[]
+@Input() filteredStatus = '';
+rockets: any[];
 
 
   constructor(

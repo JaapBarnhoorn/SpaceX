@@ -3,7 +3,7 @@
     width: 300px;
     height: 250px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     margin:10px;
 }
@@ -36,8 +36,8 @@ h2 {
     background-color: #231B2A;
     margin: 10px 5px 5px 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
-    box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);   
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
 }
 
 .rocket-information-second {
@@ -55,7 +55,7 @@ h2 {
     padding: 15px;
     width:60%;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
 }
 
@@ -65,8 +65,22 @@ h2 {
     background-color:#231B2A;
     padding: 20.6px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
+    cursor: pointer;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+  }
+
+.rocket-information-second-second:hover{
+  background-color:#2e2436;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+
+
+
 }
 
 /* search form */
@@ -82,7 +96,7 @@ input {
     padding: 10px;
     box-sizing: border-box;
     padding-left:45px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     background-color: #231B2A;
     border-radius: 5px;
@@ -93,11 +107,11 @@ input {
    .search-form h2 {
        margin: 5px;
    }
-   
+
    .Icon-inside {
     position:relative;
    }
-   
+
    .Icon-inside img {
     position:absolute;
     left:4px;
@@ -105,4 +119,39 @@ input {
     padding:6px;
 
    }
-   
+
+   .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

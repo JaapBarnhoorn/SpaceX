@@ -6,12 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rocket.component.css']
 })
 export class RocketComponent implements OnInit {
-
+ filteredStatus = '';
 
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  listen(data: any) {
+  this.filteredStatus = data;
   }
 
 }

@@ -24,42 +24,42 @@
             <img src="../../../assets/calendar.svg" alt="">
             <div>
             <h2>Launch year</h2>
-            <h3>Rocket title</h3>
+            <h3>{{ rocket?.launch_year }}</h3>
             </div>
         </div>
         <div class="rocket-information-right-first">
             <img src="../../../assets/number.svg" alt="">
             <div>
             <h2>Flight number</h2>
-            <h3>Rocket title</h3>
+            <h3>{{ rocket?.flight_number }}</h3>
             </div>
         </div>
         <div class="rocket-information-right-first">
             <img src="../../../assets/list.svg" alt="">
             <div>
             <h2>Rocket type</h2>
-            <h3>Rocket title</h3>
+            <h3>{{ rocket?.rocket.rocket_type }}</h3>
             </div>
         </div>
+        <div class="rocket-information-right-first">
+          <img src="../../../assets/launch.svg" alt="">
+          <div>
+          <h2>Launch success</h2>
+          <h3>{{ rocket?.launch_success }}</h3>
+          </div>
+      </div>
         <div class="rocket-information-right-first">
             <img src="../../../assets/landing.svg" alt="">
             <div>
             <h2>Land success</h2>
-            <h3>Rocket title</h3>
-            </div>
-        </div>
-        <div class="rocket-information-right-first">
-            <img src="../../../assets/launch.svg" alt="">
-            <div>
-            <h2>Launch success</h2>
-            <h3>Rocket title</h3>
+            <h3>{{ rocket?.land_success }}</h3>
             </div>
         </div>
         <div class="rocket-information-right-first">
             <img src="../../../assets/customer.svg" alt="">
             <div>
-            <h2>Customer</h2>
-            <h3>Rocket title</h3>
+            <h2>Customer(s)</h2>
+            <h3 *ngFor="let payload of rocket?.rocket?.second_stage.payloads">{{ payload.customers }}</h3>
             </div>
         </div>
         <div class="rocket-information-right-first">

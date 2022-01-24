@@ -13,7 +13,7 @@ h3 {
     background-color: #231B2A;
     width: 300px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
     margin: auto;
     display: flex;
@@ -28,6 +28,18 @@ h3 {
     position: absolute;
     left: 20px;
     top: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    -webkit-transition: opacity 300ms linear;
+    -ms-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+}
+
+.back:hover {
+  opacity: 1;
+  -webkit-transition: opacity 300ms linear;
+  -ms-transition: opacity 300ms linear;
+  transition: opacity 300ms linear;
 }
 
 .rocket-information-left img {
@@ -46,8 +58,8 @@ h3 {
     background-color: #231B2A;
     margin: 10px 5px 5px 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16); 
-    box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);   
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.16);
 
 }
 

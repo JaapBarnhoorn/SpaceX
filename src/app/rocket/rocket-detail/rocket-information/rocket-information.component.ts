@@ -28,7 +28,9 @@ export class RocketInformationComponent implements OnInit {
   onGetRocket(id: string) {
     this.rocketService.getRocket(id).subscribe(
      response => {
+      console.log(response)
         this.rocket = response;}
+
     )
   }
 

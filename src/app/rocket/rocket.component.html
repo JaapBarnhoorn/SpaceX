@@ -1,7 +1,8 @@
 <div class="rocket">
+    <app-search-rocket (emitFilteredStatus)="listen($event)"></app-search-rocket>
     <div>
-        <app-rocket-detail class="rocket-grid" ></app-rocket-detail>
+        <app-rocket-detail class="rocket-grid" [filteredStatus]="filteredStatus"></app-rocket-detail>
     </div>
-</div>  
+</div>
 
 

@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Notes Jaap
+
+- Zie comments met JAAP:
+- Folder structure: Geen componenten nesten. Haal rocket-information en search-rocket uit de rocket-detail folder
+- Kijk of je de applicatie WCAG compatible kan maken ahv Axe rapportage
+- Geef alle typen files zijn eigen folder (pipes, services, modules, components)

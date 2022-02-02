@@ -7,33 +7,32 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RocketComponent } from './rocket/rocket.component';
 import { RocketDetailComponent } from './rocket/rocket-detail/rocket-detail.component';
-import { RocketInformationComponent } from './rocket/rocket-detail/rocket-information/rocket-information.component'
+import { RocketInformationComponent } from './rocket/rocket-detail/rocket-information/rocket-information.component';
 import { HttpClientModule } from '@angular/common/http';
 import { YearfilterPipe } from './rocket/rocket-detail/yearfilter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  SearchRocketComponent  } from './rocket/rocket-detail/search-rocket/search-rocket.component'
-
+import { SearchRocketComponent } from './rocket/rocket-detail/search-rocket/search-rocket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    // JAAP: ↓ kan in losse rocket module
     RocketComponent,
     RocketDetailComponent,
     RocketInformationComponent,
     YearfilterPipe,
-    SearchRocketComponent
-
-
+    SearchRocketComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // JAAP: rocketModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
